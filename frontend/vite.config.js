@@ -4,9 +4,15 @@ import react from "@vitejs/plugin-react";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
+  resolve: {
+    alias: {
+      'react-router-dom': require.resolve('react-router-dom')
+    }
+  },
   build: {
     rollupOptions: {
-      external: ["@radix-ui/themes/styles.css", "react-router-dom"],
+      external: ["@radix-ui/themes/styles.css"],
     },
+
   },
 });

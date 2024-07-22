@@ -1,14 +1,12 @@
 import "./App.css";
-import Card from "./components/Card/Card";
-import JobsGrid from "./components/JobsGrid/JobsGrid";
-import Home from "./pages/Home/Home";
 import { createRoot } from "react-dom/client";
 import {
   createBrowserRouter,
   RouterProvider,
   Route,
-  Link,
 } from "react-router-dom";
+
+import Home from "./pages/Home/Home";
 import JobPost from "./pages/Job-Post/JobPost";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
@@ -75,11 +73,7 @@ function App() {
     },
   ]);
 
-  return (
-    <>
-      <RouterProvider router={router} />
-    </>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
