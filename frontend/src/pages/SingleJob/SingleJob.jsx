@@ -25,7 +25,7 @@ const SingleJob = ({
     const fetchJob = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8000/api/job/${id}`
+          `http://localhost:8000/api/jobs/${id}`
         );
         setJob(response.data);
       } catch (error) {

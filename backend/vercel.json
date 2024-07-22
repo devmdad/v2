@@ -1,15 +1,20 @@
 {
     "version": 2,
     "builds": [
-        {
-            "src": "*.js",
-            "use": "@vercel/node"
-        }
+      {
+        "src": "index.js",
+        "use": "@vercel/node"
+      }
     ],
     "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "/"
-        }
-    ]
-}
+      {
+        "src": "/api/(.*)",
+        "dest": "/index.js"
+      }
+    ],
+    "env": {
+      "DATABASE_URL": "mysql://u322709683_jobportal:Bigdoor17!@srv533.hstgr.io:3306/u322709683_jobportal",
+      "JWT_SECRET": "QXIZEwKXOZ1PRA6T7JhXwC89nByT3juB"
+    }
+  }
+  

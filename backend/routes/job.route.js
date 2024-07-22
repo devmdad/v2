@@ -23,11 +23,11 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 // Get all jobs
-router.get("/jobs", getJobs);
+router.get("/", getJobs);
 
-router.get("/job/:id", getJob);
+router.get("/:id", getJob);
 
 // Add a new job with file upload
-router.post("/jobs", auth, upload.single("companyLogo"), postJob);
+router.post("/", auth, upload.single("companyLogo"), postJob);
 
 module.exports = router;
