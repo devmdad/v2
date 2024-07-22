@@ -1,0 +1,30 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model jobs {
+  id              Int      @id @default(autoincrement())
+  date            String?  @db.VarChar(255)
+  company         String?  @db.VarChar(255)
+  title           String?  @db.VarChar(255)
+  rate            Decimal? @db.Decimal(10, 2)
+  location        String?  @db.VarChar(255)
+  workType        String?  @db.VarChar(255)
+  experienceLevel String?  @db.VarChar(255)
+  jobType         String?  @db.VarChar(255)
+  duration        String?  @db.VarChar(255)
+  companyLogo     String?  @db.VarChar(255)
+  description     String?  @db.MediumText
+}
+
+model Users {
+  id       String @id @db.VarChar(255)
+  username String @unique(map: "username") @db.VarChar(255)
+  email    String @unique(map: "email") @db.VarChar(255)
+  password String @db.VarChar(255)
+}
