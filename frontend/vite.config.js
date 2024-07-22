@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   build: {
     rollupOptions: {
-      external: ["@radix-ui/themes/styles.css"],
+      external: ["@radix-ui/themes/styles.css", "react-router-dom"],
     },
   },
 });
