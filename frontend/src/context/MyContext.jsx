@@ -1,4 +1,5 @@
 import React, { createContext, useState, useEffect } from "react";
+import jobs from "../jobs";
 
 export const MyContext = createContext();
 
@@ -9,8 +10,9 @@ export const MyProvider = ({ children }) => {
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        const response = await fetch("http://localhost:8000/api/jobs");
-        const data = await response.json();
+        // const response = await fetch("http://localhost:8000/api/jobs");
+        // const data = await response.json();
+        const data = jobs;
         setAllJobs(data);
         setLoading(false);
       } catch (error) {

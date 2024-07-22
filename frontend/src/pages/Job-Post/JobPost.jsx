@@ -69,8 +69,9 @@ const JobPost = () => {
       jobSchema.parse(job);
 
       // If validation passes, submit the form
-      const response = await axios.post("http://localhost:8000/api/jobs", job);
-      setAllJobs([...allJobs, response.data]);
+      // const response = await axios.post("http://localhost:8000/api/jobs", job);
+      // setAllJobs([...allJobs, response.data]);
+      setAllJobs([...allJobs, job]);
     } catch (err) {
       if (err instanceof z.ZodError) {
         // Extract validation errors

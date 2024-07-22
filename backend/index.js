@@ -3,9 +3,9 @@ const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const jobsRoutes = require("./routes/job.route.js");
-const path = require("path");
+// const path = require("path");
 const authRoutes = require('./routes/auth.route.js');
-const auth = require("./middleware/auth.middleware.js");
+// const auth = require("./middleware/auth.middleware.js");
 
 const app = express();
 const PORT = 8000;

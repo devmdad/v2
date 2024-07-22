@@ -5,6 +5,7 @@ import { Box, Flex } from "@radix-ui/themes";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import { formatDate } from "../../utils";
+import jobs from "../../jobs";
 
 const SingleJob = ({
   date,
@@ -24,10 +25,12 @@ const SingleJob = ({
   useEffect(() => {
     const fetchJob = async () => {
       try {
-        const response = await axios.get(
-          `http://localhost:8000/api/jobs/${id}`
-        );
-        setJob(response.data);
+        // const response = await axios.get(
+        //   `http://localhost:8000/api/jobs/${id}`
+        // );
+        // setJob(response.data);
+        const data = jobs.find(({ x }) => x === id);
+        setJob(data);
       } catch (error) {
         console.error("Error fetching job details", error);
       }

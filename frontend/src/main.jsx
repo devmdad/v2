@@ -6,6 +6,7 @@ import "@radix-ui/themes/styles.css";
 import { Theme } from "@radix-ui/themes";
 import { MyProvider } from "./context/MyContext";
 import { RouterProvider } from "react-router-dom";
+import '@radix-ui/themes/styles.css';
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
