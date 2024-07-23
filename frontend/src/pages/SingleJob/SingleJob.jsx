@@ -7,18 +7,7 @@ import axios from "axios";
 import { formatDate } from "../../utils";
 import jobs from "../../jobs";
 
-const SingleJob = ({
-  date,
-  company,
-  location,
-  rate,
-  jobType,
-  workType,
-  experienceLevel,
-  title,
-  duration,
-  description,
-}) => {
+const SingleJob = () => {
   const { id } = useParams(); // Get job ID from URL
   const [job, setJob] = useState(null);
 
@@ -29,8 +18,9 @@ const SingleJob = ({
         //   `http://localhost:8000/api/jobs/${id}`
         // );
         // setJob(response.data);
-        const data = jobs.find(({ x }) => x === id);
+        const data = jobs.find((x) => x.id.toString() === id);
         setJob(data);
+        // console.log(data);
       } catch (error) {
         console.error("Error fetching job details", error);
       }
