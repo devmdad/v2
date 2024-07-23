@@ -49,18 +49,21 @@ const Main = ({
   return (
     <main className={styles.main}>
       <div
-        className="search"
+        className="search-container"
         style={{
           backgroundColor: "rgb(58, 128, 226)",
           width: "100%",
           display: "flex",
           justifyContent: "center",
+          alignItems: 'center',
+          flexWrap: 'wrap',
+          // margin: 'auto',
           padding: "30px",
           borderRadius: "5px",
           boxShadow: "4px 4px 20px 1px #919090",
         }}
       >
-        <Flex gap="3">
+        <Flex gap="3" className={styles.search}>
           <Box maxWidth="250px">
             <TextField.Root
               radius="full"

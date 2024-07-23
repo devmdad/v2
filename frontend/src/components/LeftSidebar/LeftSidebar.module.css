@@ -1,8 +1,12 @@
 .sidebar {
     background-color: #f8f9fa;
-    padding: 20px;
+    padding: 40px;
     position: sticky;
-    top: 0;
+    top: 0px;
     overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
   

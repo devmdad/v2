@@ -7,8 +7,8 @@
   grid-template-rows: auto 1fr auto;
   grid-template-columns: 1fr 4fr;
   min-height: 100vh;
-  overflow: hidden;
-  position: relative;
+  /* overflow: hidden; */
+  /* position: relative; */
 }
 
 .header {
@@ -21,6 +21,7 @@
 
 .sidebar {
   grid-area: sidebar;
+  min-height: 100vh;
 }
 
 .main {

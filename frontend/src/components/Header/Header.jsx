@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -14,16 +15,23 @@ const Header = () => {
     }
   }, [isLoggedIn]);
 
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <header className={styles.header}>
-      <Flex justify={"between"}>
+      <Flex justify={"between"} align={"center"}>
         <Box>
           <Link to={"/"}>
             <img src={logo} alt="Logo" width={200} />
           </Link>
         </Box>
         <Box>
-          <ul>
+          <div className={styles.menuIcon} onClick={toggleMenu}>
+            &#9776; {/* Unicode character for a menu icon */}
+          </div>
+          <ul className={`${styles.nav} ${menuOpen ? styles.show : ""}`}>
             <li>
               <Link to={"/"} className={styles.link}>
                 Find Jobs
@@ -42,18 +50,17 @@ const Header = () => {
               </li>
             ) : (
               <>
-              <li>
-                <Link to={"/login"} className={styles.link}>
-                  Login
-                </Link>
-              </li>
-               <li>
-               <Link to={"/signup"} className={styles.link}>
-                 Signup
-               </Link>
-             </li>
-             </>
-              
+                <li>
+                  <Link to={"/login"} className={styles.link}>
+                    Login
+                  </Link>
+                </li>
+                <li>
+                  <Link to={"/signup"} className={styles.link}>
+                    Signup
+                  </Link>
+                </li>
+              </>
             )}
           </ul>
         </Box>
